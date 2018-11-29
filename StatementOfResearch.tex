@@ -27,165 +27,19 @@
 \maketitle
 
 \section{Overview of Research Interests}
-I have broad interests in numerical simulations of strongly correlated quantum systems in condensed matter physics.
-Problems that I have covered are electronic instability (especially superconductivity)\cite{Liu2014}, impurity problem\cite{Liu2016a} and topological states of matter\cite{Liu2016b}.
-My current interest lies in many body localization(MBL), thermalization and quantum entanglement.
-%I hope to create a fresh view for both thermalized and localized systems from theory of measurements.
-%My current plan is to devise a Hamiltonian with spin degree of freedom localized by disorder while charge degree of freedom thermal.
-One of my most ambitious projects is to create a valid approach to optimize tensor network with state of art deep learning lagorithms, in order to study thermal systems.(Sec.\ref{proposal})
-
-Comparing with most doctor candidates, I am more familiar with numerical algorithms like optimization, matrix computation and machine learning et al.
-I have got my bachelor degree on Computer Science. I have not only rich coding experience in programming languages like C++, Java, Python and Fortran,
-but also know a lot on object oriented prototyping, data structure, database, web scraping, building websites and parallel computation et al.
-With respect to numerical simulation in condensed matter physics,
-I am experienced in using large sparse matrices, tensor networks and Monte Carlo.
-Developing new approaches to modeling and solving physical problems is also one of my major interests.
-
-For two works with myself the first author, it's fair to say both original ideas came from myself.
-The first focuses on impurity problems, which is about how an quantum impurity with interaction behave when coupled to a non-interacting continuous bath(that can be represented by a hybridization function).
-What I have done is devising a general scheme of mapping a multi-channel bath into a chain and using it to study complex impurities in superconducting baths.
-The other work focuses on non-trivial excitations relating two states.
-I propose to use sub-system fidelity(SSF) defined by comparing a pair of reduced density matrices to pinpoint the location of excitations.
-We used this scheme to study "Bell entangled States" in systems with symmetry protect topological(SPT) order, and cat states in symmetry breaking systems.
-The calculation of SSF is based on the framework of matrix product states(MPS).
-The following section describes my researches in more detail.
-
-%I have tried multiple numerical methods like functional renormalization group(FRG),
-%numerical renormalization group(NRG), dynamic mean field theory(DMFT), Quantum Monte Carlo(QMC) and density matrix renormalization group(DMRG) et al,
-%most of them, I have my own version of code in python(with fortran boost).
-%I like trying new stuffs, and am able to think of new ideas, as a proof, initial ideas of two of my works came out of my mind.
-%Monte Carlo is a classical method to study strongly correlated systems without serious sign problem.
-%Numerical strategies related to tensor networks are developing fast recent decades,
-%it involves NRG(1975) in 0-dimension, DMRG(1993) in low dimension,
-%and iTEBD(2003), TRG(2007), SRG(2010), HOTRG(2012), TNR\&loop-TNR(2015) for higher dimensions.
-%Besides, some other fields like big data, neural network also benefit a lot from tensor network representation.
 
 \section{Previous Work}
-\subsection{Quantum impurity in channel mixing baths}
-Solving an impurity problem is important for not only itself, but also for its broad uses in DMFT.
-Widely used numerical impurity solvers include continuous time quantum Monte Carlo(CTQMC) and numerical renormalization group(NRG), exact diagonalization(ED) and so on.
-NRG scheme was devised by Wilson. Comparing with CTQMC, NRG is sign problem free and work in real frequency directly but hard to be generalized to multi-channel problems.
-\begin{figure}
-    \begin{center}
-    \includegraphics[width=8.5cm]{multi-band.eps}
-    \end{center}
-\caption{(a) Illustration of a Wilson chain mapped from a two-channel bath without channel mixing, the dashed lines are non-zero hopping terms.
-(b) The same chain mapped from a general channel mixing bath.}\label{wilsonchain}
-\end{figure}
+\subsection{Tensor Networks and Renormalization Group}
+I have two works during my PhD related to tensor networks, one is on the.
+Simulating quantum many body systems are my major interests.
 
-%Being a two step scheme, it first maps a continuous hybridization function to a discrete real space Wilson chain model and then use NRG iterations to solve this chain.
-As the notion of matrix product state(MPS) becomes popular,
-new methods like variational matrix product state\cite{Weichselbaum2009}
-make us see the hope to break the curse of exponential growth of bond dimension in NRG as number of channels grows.
-%Besides, with full density matrix formalism based on MPS, finite temperature and dynamic properties of impurities can be easily extracted using NRG and VMPS.\cite{Merker2012,Nghiem2014}
-However, there is still a gap towards solving complicated impurity problems, that is how to map a general hybridization function $\Delta(\omega)= i [\Sigma(\omega+i0^+)-\Sigma(\omega-i0^+) ]/2\pi$ to a Wilson chain required by both.
-This is exactly the problem that I have solved.
-I developed for the first time a scheme for mapping a general multi-channel bath to a Wilson chain,
-which contains derivation of the formula mapping a general multi-channel bath to discrete sites that directly coupled to the impurity, with user specified scaling behaviour(logarithmic or adaptive in NRG),
-and block Lanczos tridiagonalization procedure that transforms it into a channel mixing Wilson chain(Fig. \ref{wilsonchain}).
-This method can be exact in the infinite site limit.
-The idea is simple, but in practise, in order to get the best performance, I used techniques like spline curve fitting, Runge-Kutta integration, high precision and iterative Gram-Schmidt algorithm, some of which are directly related to the reliability of the final result.
-%Before my proposal, only non-channel mixing baths(or baths that can be decoupled directly) can be mapped to a real space chain.
-In the case study, I analysed two kinds of complicated superconducting baths.
-The first is an s-wave superconducting bath with particle-hole non-symmetric normal band.
-My NRG result shows the region with Yu-Shiba-Rusinov(YSR) state is tilted due to particle-hole non-symmery as can be verified approximately through analytical approach.\cite{Meng2009}
-The second case I studied is a d-wave superconducting bath but is extensively coupled to the impurity.
-It was proved that the cooper pairs play no role in Kondo physics for impurity extensively coupled d-wave superconducting bath under some specific configurations.\cite{Fritz2005}
-However we show that cooper pairs are able to screen a local momentum when the coupling is not $C_{4v}$ point group symmetric.
-%With my proposal, Kondo physics in complicated systems like spin orbit coupled systems, multi-impurity problem and superconducting systems.
-
-\subsection{Sub-system fidelity in topological phase of matter}
-
-Degenerate states in different parity sectors in system with symmetry protect topological(SPT) order are known to be locally indistinguishable(LI) and could be related by zero modes at two edges.
-However, for interacting systems, even though we have got two states using finite DMRG,
-it is not easy to show the two states are related by edge modes or they are LI.%(in fact, Bell states and cat states are also good examples that LI).
-
-I propose to use sub-system fidelity(SSF) $F={\rm Tr}\sqrt{\sqrt{\rho_1}\rho_2\sqrt{\rho_1}}$ to detect and characterize excitations in a subspace, especially when those excitations are highly non-local.
-Here, $\rho_1$ and $\rho_2$ are reduced density matrices that obtained from the same region of two states.
-SSF is a quantity that measures the minimal probability correlation that can be obtained from a set of positive operator valued measurements(POVM) on specified region.
-Our work mainly answers the following two questions in an easy way in terms of measurements:
-\begin{enumerate}
-    \item When we get two states on a finite chain(suppose in the form of MPS), how can we verify they are locally indistinguishable(LI)?
-        And what makes them LI?
-    \item When we get degenerate states, how can we tell these states could be related by edge modes only?
-\end{enumerate}
-%SSF measures the fidelity(or similarity) between two reduced density matrices that obtained from same region of two states.
-%(minimal probability correlation that can be obtained from a set of positive operator valued measurements(POVM)
-%An intuitive thinking is that if we create a local excitation at area $i$ so that $O_i^\dag|\psi\>=|\psi'\>$ with $\<\psi|\psi'\>=0$,
-%we would expect the SSF between these two states on this specific area $F^i_{\psi,\psi'}=0$, for we can easily distinguish these two states by measurements on this area.
-%By some linear combinations of $|\psi\>$ and $|\psi'\>$, we can form many other orthogonal pairs on their Bloch sphere, all of them are distinguishable at area $i$.
-Our work shows that to reveal the location and characteristic size of some special modes that are highly non-local(e.g. those relating SPT degenerate states and cat states) from two states,
-it is not enough to compare(through SSF) two states only, but states on the Bloch sphere spanned by them.
-I constructed the representation for edge modes and developed a criteria to examine whether these edge modes are only allowed modes in this subspace.
-In practise, the coding involves two-site VMPS based on matrix product state(MPS) and matrix product operator(MPO) with U(1) good quantum number.
-On the other hand, an algorithm for getting the mixed state for arbitrary segment, by tracing out the orthogonalized environment, also plays a vital role in SSF calculation.
-In the implementation on the spin-1 Heisenberg model,
-the degeneracy of entanglement spectrum\cite{Pollmann2010} is interpreted as the direct consequence of having "Bell entangled states" in this system.
-Also, I used two length scales for edge modes to depict the transition from topological phase to $Z_2^z$ symmetry breaking phase.
-Interacting Kitaev chain and XZ model(mathematically equivalent through Jordan-Wigner transformation) are studied in a comparative way,
-in our scheme, it is too obvious why people are able to construct "Majorana edge modes"\cite{Vishveshwara2011,*Bardyn2012,*Zvyagin2013} in bosonic models mathematically,
-while those modes have nothing to do with topology and two edges.
-In fact, they can be defined anywhere in symmetry breaking systems.
+\subsection{Quantum Machine Learning}
+Quantum machine learning is an exciting field with a lot of chances, I and Lei Wang developed the 
 
 \section{Future Directions}\label{proposal}
-Recently, I became interested in many body localization(MBL) and eigen-state thermalization(ETH).
-Numerical simulations play an important roles in the study of MBL such as
-exact diagonalization(ED) and variational unitary matrix product operator (VUMPO)\cite{Pollmann2016} for energy statistics,
-time evolving block decimation(TEBD) for time evolution and density matrix renormalization group(DMRG)-X\cite{Khemani2016} for targeting highly excited states.
-I am familiar with most of these methods, also MBL is closely related to my previous works.
-For example, SSF could be used to get the characteristic length(and construct the many body representation) combining DMRG-X scheme for an $l$-bit relating two states.
-The characteristic length of $l$-bits as a function of energy is useful in probing the many body mobility edge.
-However, my personal interest lies in thermal states.
-A both important and challedging problem is how to get and represent a thermal state.
-
-Machine learning became a trendy numerical method in many areas since the wave of research near 2006.
-This research wave is driven by the concept of deep learning and the development of internet.
-As an advanced version of optimization method, machine learning has been successfully implemented in big data processing.
-Like quantum state representation, big data processing has also came to the era of tensor network\cite{Cichocki2014}.
-This is the reason why I intended to combine machine learning and tensor network to solve physical problems.
-In fact, machine learning has already been used in coping physical problems combining Monte Carlo simulations, by optimizing the Monte Carlo sampling procedure to speed up the program.\cite{Liu2016}
-I believe tensor network can be a better playground for machine learning algorithms like structure revealing, back propagation et al.
-
-To diagonalize a thermal Hamiltonian, we face difficulties in both state representation and optimization.
-For example, in the VUMPO approach of getting full energy spectrum for a chain,
-people face the problem of fast growing computational cost as the number of layers increases. Besides, if there would exist any good ansatz for a thermal states, it must be a multiple layered tensor network in order to meet the requirement of volume law entanglement entropy.
-In order to generalize VUMPO to a thermal chain, we need a better optimization scheme other than variational local optimization to optimize the deep layers of tensor network.
-In the following description, I intended to devise a circuit to get the inverse of an MPO through neural network training to justify the usefulness of neural network algorithms in tensor networks.
-
-\begin{figure}
-    \begin{center}
-    \includegraphics[width=8.5cm]{plan.pdf}
-    \end{center}
-    \caption{Illustration of using machine learning to get the reverse of $H$ with a $4$-layered tensor network.
-    White squares are our Hamiltonian and black squares are matrices for neurons' weights $X_i$.}\label{plan}
-\end{figure}
-
-As shown in Fig.\ref{plan}, I construct an $n$-layered MPO network $X=\prod\limits_{i=1}^n X_i$, with $X_i$ being initialized to a random MPO.
-Training data are a large amount of random MPS $|\psi_0\>$ and the cost function is $J(X)=\||\psi_n\>-|\psi_0\>\|_2$ for we expect the overall effect of the network to be identity.
-We train the network repeatedly until we have $|\psi_n\>=|\psi_0\>$ for any input, i.e. $X$ is the inverse of $H$.
-Back propagation algorithm in machine learning can be implemented directly to perform updates for tensors,
-with weights for change $|\delta X_j\>\propto |\delta \psi_j\>\<\psi_{j-1}|$.
-
-Similar procedures should be possible for eigenvalue problems.\cite{Yu2015}
-However, these proposals face many difficulties.
-The most obvious one is finding an efficient scheme to evaluate tensor network in order to get output (especially for a thermal chain).
-Sadly, tensor renormalization group algorithms can not be used directly here for we need states generated from applying MPO in each layer to train our 'hidden' units.
-However, I believe, with try and error, a valid approach for solving MPO eigenvalue problems with machine learning will show up.
-
 \section{Summary}
-
-My dual background of computer science and physics and broad experience of numerical simulations of phenomena in condensed matter physics has built a solid ground for pursuing my academic career in physics.
-I am very interested in working in your group and am confident that I will be helpful in especially numerical simulations.
-
 %\bibliographystyle{ieeetr}
 \bibliographystyle{rsc}
 \bibliography{ref}
-\bigskip
-[14] A selection of my coding repositories on Github:
-\begin{itemize}
-    \item \href{https://github.com/GiggleLiu/Jacobi\_Davidson}{Jacobi-Davidson method for diagonalizing large sparse matrices}
-    \item \href{https://github.com/GiggleLiu/nrg\_mapping}{Numerical Renormalization, the mapping}
-    \item \href{https://github.com/GiggleLiu/pymps}{Matrix Product State and Matrix Product Operator}
-\end{itemize}
 
 \end{document}
