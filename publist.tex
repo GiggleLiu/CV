@@ -1,0 +1,102 @@
+% LaTeX Curriculum Vitae Template
+%
+% Copyright (C) 2004-2009 Jason Blevins <jrblevin@sdf.lonestar.org>
+% http://jblevins.org/projects/cv-template/
+%
+% You may use use this document as a template to create your own CV
+% and you may redistribute the source code freely. No attribution is
+% required in any resulting documents. I do ask that you please leave
+% this notice and the above URL in the source code if you choose to
+% redistribute this file.
+
+\documentclass[letterpaper]{article}
+%\usepackage[UTF8]{ctex}
+\usepackage{xeCJK}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+% Comment the following lines to use the default Computer Modern font
+% instead of the Palatino font provided by the mathpazo package.
+% Remove the 'osf' bit if you don't like the old style figures.
+\usepackage[T1]{fontenc}
+\usepackage[sc,osf]{mathpazo}
+
+% Set your name here
+\def\name{Jin-Guo Liu (刘金国)}
+
+% Replace this with a link to your CV if you like, or set it empty
+% (as in \def\footerlink{}) to remove the link in the footer:
+\def\footerlink{}   %{http://jblevins.org/projects/cv-template/}
+
+% The following metadata will show up in the PDF properties
+\hypersetup{
+  colorlinks = true,
+  urlcolor = blue,
+  pdfauthor = {\name},
+  pdfkeywords = {economics, statistics, mathematics},
+  pdftitle = {\name: Curriculum Vitae},
+  pdfsubject = {Curriculum Vitae},
+  pdfpagemode = UseNone
+}
+
+\geometry{
+  body={6.5in, 8.5in},
+  left=1.0in,
+  top=1.25in
+}
+
+\fontsize{10}{13}
+% Customize page headers
+\pagestyle{myheadings}
+\markright{\name}
+\thispagestyle{empty}
+
+% Custom section fonts
+\usepackage{sectsty}
+\sectionfont{\rmfamily\mdseries\Large}
+\subsectionfont{\rmfamily\mdseries\itshape\large}
+
+% Other possible font commands include:
+% \ttfamily for teletype,
+% \sffamily for sans serif,
+% \bfseries for bold,
+% \scshape for small caps,
+% \normalsize, \large, \Large, \LARGE sizes.
+
+% Don't indent paragraphs.
+\setlength\parindent{0em}
+
+% Make lists without bullets
+\renewenvironment{itemize}{
+  \begin{list}{}{
+    \setlength{\leftmargin}{1.5em}
+  }
+}{
+  \end{list}
+}
+
+\begin{document}
+
+\section*{Publication List}
+\begin{itemize}
+    \item [1] {\bf Jin-Guo Liu}, Da Wang and Qiang-Hua Wang, Quantum impurities in channel mixing baths. \href{https://journals.aps.org/prb/abstract/10.1103/PhysRevB.93.035102}{Phys. Rev. B {\bf 93}, 035102} (2016).
+    \item [2] {\bf Jin-Guo Liu}, Zhao-Long Gu, Jian-Xin Li and Qiang-Hua Wang, Sub-system fidelity for ground states in one dimensional interacting systems. \href{http://iopscience.iop.org/article/10.1088/1367-2630/aa6a4b}{N. J. Phys. 19(9), 093017} (2017).
+    \item [3] Yang Yang, Wan-Sheng Wang, {\bf Jin-Guo Liu}, Hua Chen, Jian-Hui Dai and Qiang-Hua Wang, Superconductivity in doped ${\mathrm{Sr}}_{2}{\mathrm{IrO}}_{4}$: A functional renormalization group study. \href{https://journals.aps.org/prb/abstract/10.1103/PhysRevB.89.094518}{Phys. Rev. B {\bf 89}, 094518} (2014).
+    \item [4] Yao Wang, {\bf Jin-Guo Liu}, Wan-Sheng Wang, and Qiang-Hua Wang, Electronic order near the type-II van Hove singularity in BC${}_3$. \href{https://journals.aps.org/prb/abstract/10.1103/PhysRevB.97.174513}{Phys. Rev. B {\bf 97}, 174513} (2018)
+    \item [5] Zi Cai, and {\bf Jin-Guo Liu}, Approximating quantum many-body wave functions using artificial neural networks. \href{https://journals.aps.org/prb/abstract/10.1103/PhysRevB.97.035116}{Phys. Rev. B {\bf 97}, 035116} (2018).
+    \item [6] {\bf Jin-Guo Liu}, and Lei Wang, Differentiable learning of quantum circuit Born machine. \href{https://arxiv.org/abs/1804.04168}{arXiv:1804.04168} (2018).
+    \item [7] Jin-Feng Zeng, Yu-Feng Wu, {\bf Jin-Guo Liu*}, Lei Wang and JiangPing Hu, Learning and Inference on Generative Adversarial Quantum Circuits. \href{https://arxiv.org/abs/1808.03425}{arXiv:1808.03425} (2018)
+    \item [8] {\bf Jin-Guo Liu}, Yi-Hong Zhang, Yuan Wan and Lei Wang, Variational Quantum Eigensolver with Fewer Qubits. \href{https://arxiv.org/abs/1902.02663}{arXiv:1902.02663} (2019)
+    \item [9] Hai-Jun Liao, {\bf Jin-Guo Liu}, Lei Wang, Tao Xiang, Differentiable Programming Tensor Networks \href{https://arxiv.org/abs/1903.09650}{arXiv:1903.09650} (2019)
+
+\end{itemize}
+
+% Footer
+\begin{center}
+  \begin{footnotesize}
+    Last updated: \today \\
+    \href{\footerlink}{\texttt{\footerlink}}
+  \end{footnotesize}
+\end{center}
+
+\end{document}
