@@ -1,192 +1,223 @@
-% LaTeX Curriculum Vitae Template
+% !TEX program = xelatex
+% !TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
 %
-% Copyright (C) 2004-2009 Jason Blevins <jrblevin@sdf.lonestar.org>
-% http://jblevins.org/projects/cv-template/
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
 %
-% You may use use this document as a template to create your own CV
-% and you may redistribute the source code freely. No attribution is
-% required in any resulting documents. I do ask that you please leave
-% this notice and the above URL in the source code if you choose to
-% redistribute this file.
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
 
-\documentclass[letterpaper]{article}
-%\usepackage[UTF8]{ctex}
-\usepackage{hyperref}
-\usepackage{geometry}
-\usepackage{CJKutf8}
-\newcommand{\chinese}[1]{\begin{CJK}{UTF8}{gbsn}#1\end{CJK}}
-\protected\def\name{Jin-Guo Liu (\chinese{刘金国})}
 
-% Comment the following lines to use the default Computer Modern font
-% instead of the Palatino font provided by the mathpazo package.
-% Remove the 'osf' bit if you don't like the old style figures.
-\usepackage[T1]{fontenc}
-\usepackage[sc,osf]{mathpazo}
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, a4paper]{awesome-cv}
+\usepackage{xeCJK}
 
-% Set your name here
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 
-% Replace this with a link to your CV if you like, or set it empty
-% (as in \def\footerlink{}) to remove the link in the footer:
-\def\footerlink{}   %{http://jblevins.org/projects/cv-template/}
+% Specify the location of the included fonts
+\fontdir[fonts/]
 
-% The following metadata will show up in the PDF properties
-\hypersetup{
-  colorlinks = true,
-  urlcolor = blue,
-  pdfauthor = {\name},
-  pdfkeywords = {economics, statistics, mathematics},
-  pdftitle = {\name: Curriculum Vitae},
-  pdfsubject = {Curriculum Vitae},
-  pdfpagemode = UseNone
-}
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+\colorlet{awesome}{awesome-red}
+% Uncomment if you would like to specify your own color
+% \definecolor{awesome}{HTML}{CA63A8}
 
-\geometry{
-  body={6.5in, 8.5in},
-  left=1.0in,
-  top=1.25in
-}
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
 
-\fontsize{10}{13}
-% Customize page headers
-\pagestyle{myheadings}
-\markright{\name}
-\thispagestyle{empty}
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
 
-% Custom section fonts
-\usepackage{sectsty}
-\sectionfont{\rmfamily\mdseries\Large}
-\subsectionfont{\rmfamily\mdseries\itshape\large}
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
-% Other possible font commands include:
-% \ttfamily for teletype,
-% \sffamily for sans serif,
-% \bfseries for bold,
-% \scshape for small caps,
-% \normalsize, \large, \Large, \LARGE sizes.
 
-% Don't indent paragraphs.
-\setlength\parindent{0em}
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+% \photo{./examples/profile.png}
+\name{Jinguo Liu}{\huge (刘金国)}
+\position{Postdoc fellow in Harvard university}
+%\address{31 Miller St.}
 
-% Make lists without bullets
-\renewenvironment{itemize}{
-  \begin{list}{}{
-    \setlength{\leftmargin}{1.5em}
-  }
-}{
-  \end{list}
-}
+\mobile{(+86) 1519-5955-770}
+\email{cacate0129@gmail.com}
+\homepage{https://giggleliu.github.io/}
+\github{GiggleLiu}
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \twitter{@twit}
+% \skype{skype-id}
+% \reddit{reddit-id}
+% \medium{madium-id}
+ \googlescholar{4edw228AAAAJ}{Jinguo Liu}
+%% \firstname and \lastname will be used
+% \googlescholar{googlescholar-id}{}
+% \extrainfo{extra informations}
 
+\quote{``朝正确的方向攀爬，而不是去摘下垂的果实。''}
+
+%-------------------------------------------------------------------------------
 \begin{document}
 
-% Place name at left
-{\huge \name}
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader
 
-% Alternatively, print name centered and bold:
-%\centerline{\huge \bf \name}
-
-\vspace{0.2in}
-
-\begin{minipage}{0.45\linewidth}
-    \href{http://english.iop.cas.cn/}{Institute of Physics\\
-    Chinese Academy of Sciences}\\
-    BeiJing 100190, China
-\end{minipage}
-\begin{minipage}{0.45\linewidth}
-    \begin{tabular}{ll}
-        Phone: & 86-151-9595-5770 \\
-        Email: & \href{mailto:cacate0129@gmail.com}{\tt cacate0129@gmail.com} \\
-        Birth: & Jan. 29, 1990.\\
-        HomePage: & \href{https://giggleliu.github.io}{https://giggleliu.github.io}\\
-        Github: & \href{https://github.com/GiggleLiu}{GiggleLiu}
-    \end{tabular}
-\end{minipage}
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter
+  {\today}
+  {Jinguo Liu (刘金国)~~~·~~~Curriculum Vitae}
+  {\thepage}
 
 
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%-------------------------------------------------------------------------------
+\cvsection{Education}
+\begin{cventries}
+  \cventry
+    {B.S. in Software Engineering}
+    {Nanjing Institute of Technology}
+    {Nanjing}
+    {2008--2012}
+    {}  % description
+  \cventry
+    {Ph.D. Theoretical Physics}
+    {Nanjing University}
+    {Nanjing}
+    {2012--2017}
+    {}
+\end{cventries}
 
-\section*{Education}
+\cvsection{Skills}
+\begin{cvskills}
+    \cvskill{Programming}{Julia, Python, Fortran}
+    \cvskill{Language}{Chinese, English}
+    \cvskill{Algorithms}{Tensor Networks, Differentiable Programming}
+\end{cvskills}
+\cvsection{Experience}
+\begin{cventries}
+  \cventry
+    {Postdoct in }
+    {Institute of Physics (IOP), Chinese Academy of Sciences}
+    {Beijing}
+    {2017--2019}
+    {}  % description
+\end{cventries}
+% I am a computational quantum physicsist. Armed with solid background of both quantum physics and computer science, I am able to solve some valuable problems in the cross discipline of quantum physics and computer sciences.
+% I am also the maintainer of several open source projects (listed at the end of this CV), as well as an organizer of \href{https://github.com/QuantumBFS/}{QuantumBFS}.
+% I list my research experiences as the following:
+% \begin{itemize}
+%     \item [1] When I was a college student, I read a book "Quantum Computation and Quantum Information" by Michael A. Nielsen.
+%         I was deeply impressed by the beautiful computation framework in the book, and decided to learn more about quantum computing in Prof. Yang Yu's group in Nanjing University.
+%     \item [2] After one year, I was transferred to Prof. Qiang-Hua Wang's group since I was more interested in theories and numerical simulations rather than experiments. I mastered tensor networks algorithms and renormalizationing group theories, and became a geek in simulating quantum many body systems. Most of my works are about designing numeric algorithms to solve important problems in physics, like multi-channel Kondo problem and fractional topological excitation.
+%     \item [3] In the last year as a doctor candidate, I won the first prize in ZTE fantastic algorithm challenge, which is a good proof of my solid algorithmic background of matrix computation and combinatorial optimization. Then I became a postdoc of a young and charming guy \href{http://wangleiphy.github.io/}{Lei-Wang}. Besides providing valuable suggestions in my research, Lei also creates a lot of opportunities for me, like encouraging me to give lectures and talks in international conferences and summer schools.
+%     \item [4] My postdoc career is in Institute of Physics (IOP), Chinese Academy of Sciences. That time my research interest is automatic differentiation and quantum algorithms, this is a field that can incubate several killer Apps. I also developed the quantum simulation framework \href{https://github.com/QuantumBFS/Yao.jl}{Yao.jl} with a built in automatic differention engine together with a genuine Julia lover \href{http://blog.rogerluo.me/}{Xiu-Zhe Luo}.
+%     \item [5] I mentored a student for Julia on the \href{https://summerofcode.withgoogle.com/}{GSoC} project of differentiable tensor networks. It is a valuable experimence for me to lead a project. The open source repository \texttt{OMEinsum} is listed bellow.
+%     \item [6] Now I am full participated in reversible Turing machine. It can solve the most important problem in differential programming, the genuine automatic differentiation.
+% \end{itemize}
+%\input{cv/extracurricular.tex}
+\cvsection{Honors \& Awards}
+\begin{cvhonors}
+    \cvhonor
+    {First prize (out of 8000 teams, 100,000 RMB award)} % Award
+    {\href{http://www.iqiyi.com/w\_19rto3v4h1.html}{ZTE Fantastic Algorithm Challenge}} % Event
+    {Xi An, China} % Location
+    {2017} % Date(s)
 
-\begin{itemize}
-    \item B.S. Software Engineering, Nanjing Institute of Technology, 2008--2012.
-    \item Ph.D. Physics, Nanjing University, 2012--2017. (Advisor: Prof. Qiang-Hua Wang)
-\end{itemize}
+    \cvhonor
+    {First prize}{Physics Olympiad}{JiangSu Province, China}{2007}
+    \cvhonor
+    {Academic Excellence Scholarship}{Nanjing University}{NanJing}{2016}
+\end{cvhonors}
 
-\section*{Skills}
-\begin{itemize}
-    \item Quantum Software Engineering
-    \item Tensor Networks
-    \item Differentiable Programming
-    \item Julia/Python/Fortran language
-\end{itemize}
+%\input{cv/presentation.tex}
+\cvsection{Presentation}
+\begin{cventries}
+\cventry
+    {Presenter} % role
+    {March Meeting} % event
+    {Boston} % location
+    {2019} % date
+    {
+    \begin{cvitems}
+        Gave a talk \href{https://meetings.aps.org/Meeting/MAR19/Session/E27.10}{"Differentiale Quantum Circuits and Generative Modeling"}
+    \end{cvitems}
+    }
+\cventry
+    {Presenter}
+    {Juliacon}{Baltimore}{2019}
+    {
+    \begin{cvitems}
+        Gave a talk \href{https://www.youtube.com/watch?v=f-CaQMTqjPk}{"Differential Programming Tensor Networks"}
+    \end{cvitems}
+    }
+\cventry
+    {Lecturer}
+    {\href{https://github.com/QuantumBFS/SSSS}{Deep Learning and Quantum Programming: A Spring School}}
+    {Dongguan}{2019}
+    {
+    \begin{cvitems}
+        Gave lectures on quantum computing.
+    \end{cvitems}
+    }
 
-\section*{Awards}
-\begin{itemize}
-    \item First prize of Physics Olympiad, JiangSu Province, 2007
-    \item Academic Excellence Scholarship, Nanjing University, 2016
-    \item First prize of \href{http://www.iqiyi.com/w\_19rto3v4h1.html}{ZTE Fantastic Algorithm Challenge} (out of 8000 teams, 100,000 RMB award), 2017
-\end{itemize}
+\end{cventries}
 
-\section*{Research interest \& experience}
-I am a computational quantum physicsist. Armed with solid background of both quantum physics and computer science, I am able to solve some valuable problems in the cross discipline of quantum physics and computer sciences.
-I am also the maintainer of several open source projects (listed at the end of this CV), as well as an organizer of \href{https://github.com/QuantumBFS/}{QuantumBFS}.
-I list my research experiences as the following:
-\begin{itemize}
-    \item [1] When I was a college student, I read a book "Quantum Computation and Quantum Information" by Michael A. Nielsen.
-        I was deeply impressed by the beautiful computation framework in the book, and decided to learn more about quantum computing in Prof. Yang Yu's group in Nanjing University.
-    \item [2] After one year, I was transferred to Prof. Qiang-Hua Wang's group since I was more interested in theories and numerical simulations rather than experiments. I mastered tensor networks algorithms and renormalizationing group theories, and became a geek in simulating quantum many body systems. Most of my works are about designing numeric algorithms to solve important problems in physics, like multi-channel Kondo problem and fractional topological excitation.
-    \item [3] In the last year as a doctor candidate, I won the first prize in ZTE fantastic algorithm challenge, which is a good proof of my solid algorithmic background of matrix computation and combinatorial optimization. Then I became a postdoc of a young and charming guy \href{http://wangleiphy.github.io/}{Lei-Wang}. Besides providing valuable suggestions in my research, Lei also creates a lot of opportunities for me, like encouraging me to give lectures and talks in international conferences and summer schools.
-    \item [4] My postdoc career is in Institute of Physics (IOP), Chinese Academy of Sciences. That time my research interest is automatic differentiation and quantum algorithms, this is a field that can incubate several killer Apps. I also developed the quantum simulation framework \href{https://github.com/QuantumBFS/Yao.jl}{Yao.jl} with a built in automatic differention engine together with a genuine Julia lover \href{http://blog.rogerluo.me/}{Xiu-Zhe Luo}.
-    \item [5] I mentored a student for Julia on the \href{https://summerofcode.withgoogle.com/}{GSoC} project of differentiable tensor networks. It is a valuable experimence for me to lead a project. The open source repository \texttt{OMEinsum} is listed bellow.
-    \item [6] Now I am full participated in reversible Turing machine. It can solve the most important problem in differential programming, the genuine automatic differentiation.
-\end{itemize}
-
-\section*{Publications}
-\begin{itemize}
-    \item [1] {\bf Jin-Guo Liu}, Da Wang and Qiang-Hua Wang, Quantum impurities in channel mixing baths. \href{https://journals.aps.org/prb/abstract/10.1103/PhysRevB.93.035102}{Phys. Rev. B {\bf 93}, 035102} (2016).
-    \item [2] {\bf Jin-Guo Liu}, Zhao-Long Gu, Jian-Xin Li and Qiang-Hua Wang, Sub-system fidelity for ground states in one dimensional interacting systems. \href{http://iopscience.iop.org/article/10.1088/1367-2630/aa6a4b}{N. J. Phys. 19(9), 093017} (2017).
-    \item [3] Yang Yang, Wan-Sheng Wang, {\bf Jin-Guo Liu}, Hua Chen, Jian-Hui Dai and Qiang-Hua Wang, Superconductivity in doped ${\mathrm{Sr}}_{2}{\mathrm{IrO}}_{4}$: A functional renormalization group study. \href{https://journals.aps.org/prb/abstract/10.1103/PhysRevB.89.094518}{Phys. Rev. B {\bf 89}, 094518} (2014).
-    \item [4] Yao Wang, {\bf Jin-Guo Liu}, Wan-Sheng Wang, and Qiang-Hua Wang, Electronic order near the type-II van Hove singularity in BC${}_3$. \href{https://journals.aps.org/prb/abstract/10.1103/PhysRevB.97.174513}{Phys. Rev. B {\bf 97}, 174513} (2018)
-    \item [5] Zi Cai, and {\bf Jin-Guo Liu}, Approximating quantum many-body wave functions using artificial neural networks. \href{https://journals.aps.org/prb/abstract/10.1103/PhysRevB.97.035116}{Phys. Rev. B {\bf 97}, 035116} (2018).
-    \item [6] {\bf Jin-Guo Liu}, and Lei Wang, Differentiable learning of quantum circuit Born machine. \href{https://journals.aps.org/pra/abstract/10.1103/PhysRevA.98.062324}{Phys. Rev. A {\bf 98}} (2018).
-    \item [7] Jin-Feng Zeng, Yu-Feng Wu, {\bf Jin-Guo Liu*}, Lei Wang and JiangPing Hu, Learning and Inference on Generative Adversarial Quantum Circuits. \href{https://journals.aps.org/pra/abstract/10.1103/PhysRevA.99.052306}{Phys. Rev. A {\bf 99}, 052306} (2018)
-    \item [8] {\bf Jin-Guo Liu}, Yi-Hong Zhang, Yuan Wan and Lei Wang, Variational Quantum Eigensolver with Fewer Qubits. \href{https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.1.023025}{Phys. Rev. Research {\bf 1}, 023025} (2019)
-    \item [9] Hai-Jun Liao, {\bf Jin-Guo Liu}, Lei Wang, Tao Xiang, Differentiable Programming Tensor Networks \href{https://journals.aps.org/prx/abstract/10.1103/PhysRevX.9.031041}{Phys. Rev. X {\bf 9}.031041} (2019)
-    \item [10] Xiu-Zhe Luo, {\bf Jin-Guo Liu}, Pan Zhang and Lei Wang, Yao. jl: Extensible, efficient framework for quantum algorithm design. \href{https://arxiv.org/abs/1912.10877}{arXiv:1912.10877} (2019)
-    \item [11] {\bf Jin-Guo Liu}, Liang Mao, Pan Zhang, Lei Wang, Solving Quantum Statistical Mechanics with Variational Autoregressive Networks and Quantum Circuits. \href{https://arxiv.org/abs/1912.11381}{arXiv:1912.11381} (2019)
-    \item [12] Hao Xie, {\bf Jin-Guo Liu}, Lei Wang, Automatic differentiation of dominant eigensolver and its applications in quantum physics. \href{https://arxiv.org/abs/2001.04121}{arXiv:2001.04121} (2020)
-Related articles
-\end{itemize}
-
-\section*{A Selection of Github Repositories}
-\begin{itemize}
-    \item \href{https://github.com/GiggleLiu/NiLang.jl}{NiLang.jl}: An implementation of reversible Turing machine with instruction level autodiff.
-    \item \href{https://github.com/under-Peter/OMEinsum.jl}{OMEinsum.jl}: one more einsum with generic element type, CUDA backend and automatic differentiation.
-    \item \href{https://github.com/QuantumBFS/Yao.jl}{Yao.jl}: high performance quantum circuit simulator aiming for quantum machine learning.
-    \item \href{https://github.com/GiggleLiu/marburg}{marbug}: neural network for physicists tutorial code.
-    \item \href{https://github.com/GiggleLiu/viznet}{viznet}: network (neural network, tensor networks and quantum circuit) visualization toolbox.
-\end{itemize}
-
-\section*{Conferences}
-\begin{itemize}
-    \item [1] Statistic Physics and Machine Learning (An Qing), talk: "Machine Learning in frustrated quantum spin system".
-    \item [2] The FOR 1807 Winter School on Numerical Methods for Strongly Correlated Quantum Systems (Marburg), lecture: "Deep learning and quantum many body systems".
-    \item [3] The 8th Workshop on Quantum Many-Body Computation (Hang Zhou), poster: "Differentiable learning of quantum circuit Born machine"
-    \item [4] Computational Approaches for Quantum Many Body Systems 2016 (Bei Jing), talk: "Local indistinguishability and topological phase of matter"
-    \item [5] The First International Conference on Machine Learning and Physics (Bei Jing), poster: "Differentiable learning of quantum circuit Born machine"
-    \item [6] Julia Meetup in BeiJing 2018, talk: Tutorial for high performance matrix computations, in Julia
-    \item [7] Quantum Information for Developers 2018 (Zurich), Hackathon: "Funny Tensor Networks"
-    \item [8] March Meeting 2019 (Bostone), \href{https://meetings.aps.org/Meeting/MAR19/Session/E27.10}{Talk: "Differentiale Quantum Circuits and Generative Modeling"}
-    \item [9] Juliacon 2019 (Baltimore), \href{https://www.youtube.com/watch?v=f-CaQMTqjPk}{Talk: "Differential Programming Tensor Networks"}
-    \item [10] 23rd Annual Conference on Quantum Information Processing (ShenZhen), Poster: "Yao - A differential quantum programming framework"
-\end{itemize}
-
-\bigskip
-
-% Footer
-\begin{center}
-  \begin{footnotesize}
-    Last updated: \today \\
-    \href{\footerlink}{\texttt{\footerlink}}
-  \end{footnotesize}
-\end{center}
-
+%\input{cv/writing.tex}
+%\input{cv/committees.tex}
+\cvsection{Selected Publications}
+\begin{cventries}
+  \cventry
+    {First author} % Role
+    {Computing properties of independent sets by generic programming tensor networks} % Title
+    {Unpublished} % Location
+    {2022} % Date(s)
+    {
+      \begin{cvitems} % Description(s)
+        \item {}
+      \end{cvitems}
+    }
+  \cventry{First author}
+  {Tropical tensor network for ground states of spin glasses}
+  {Phys. Rev. Lett. 126, 090506}
+  {2021}
+  {
+      \begin{cvitems} % Description(s)
+        \item {}
+      \end{cvitems}
+  }
+  \cventry
+    {Second author} % Role
+    {Yao.jl: Extensible, Efficient Framework for Quantum Algorithm Design} % Title
+    {Quantum} % Location
+    {2020} % Date(s)
+    {
+      \begin{cvitems} % Description(s)
+        \item {One of the main authors of the most popular quantum circuit simulator in Julia language.}
+      \end{cvitems}
+    }
+\end{cventries}
+%-------------------------------------------------------------------------------
 \end{document}
