@@ -11,9 +11,11 @@
 
 \documentclass[letterpaper]{article}
 %\usepackage[UTF8]{ctex}
-\usepackage{xeCJK}
 \usepackage{hyperref}
 \usepackage{geometry}
+\usepackage{CJKutf8}
+\newcommand{\chinese}[1]{\begin{CJK}{UTF8}{gbsn}#1\end{CJK}}
+\protected\def\name{Jin-Guo Liu (\chinese{刘金国})}
 
 % Comment the following lines to use the default Computer Modern font
 % instead of the Palatino font provided by the mathpazo package.
@@ -22,7 +24,6 @@
 \usepackage[sc,osf]{mathpazo}
 
 % Set your name here
-\def\name{Jin-Guo Liu (刘金国)}
 
 % Replace this with a link to your CV if you like, or set it empty
 % (as in \def\footerlink{}) to remove the link in the footer:
