@@ -16,3 +16,4 @@ _*.bib
 _temp/
 reply.pdf
 .DS_store
+*.swp
