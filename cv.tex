@@ -20,6 +20,9 @@
 % A4 paper size by default, use 'letterpaper' for US letter
 \documentclass[11pt, a4paper]{awesome-cv}
 \usepackage{xeCJK}
+\hypersetup{
+    colorlinks = true,
+}
 
 % Configure page margins with geometry
 \geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
@@ -103,7 +106,7 @@
     {2008--2012}
     {\begin{cvitems}
      When I was a college student, I read a book "Quantum Computation and Quantum Information" by Michael A. Nielsen.
-        I was deeply impressed by the beautiful computation framework in the book, and decided to learn more about quantum computing in Prof. Yang Yu's group in Nanjing University.
+        I was deeply impressed by the beautiful computation framework in the book, and eagered to learn more about quantum computing.
     \end{cvitems}}
   \cventry
     {Ph.D. Theoretical Physics}
@@ -112,7 +115,7 @@
     {2012--2017}
     {\begin{cvitems}
     Adviced under Prof. Qianghua Wang, doing numeric simulation of condensed matters.
-    I mastered tensor networks algorithms and renormalizationing group theories, and became a geek in simulating quantum many body systems. Most of my works are about designing numeric algorithms to solve important problems in physics, like multi-channel Kondo problem and fractional topological excitation.
+    I mastered tensor networks algorithms and renormalizationing group theories, and became a geek in simulating quantum many body systems. Most of my works are about designing numeric algorithms to solve problems in physics, like multi-channel Kondo problem and fractional topological excitation.
     In the last year as a doctor candidate, I won the first prize in ZTE fantastic algorithm challenge, which is a good proof of my solid algorithmic background of matrix computation and combinatorial optimization.
     \end{cvitems}}
 \end{cventries}
@@ -131,9 +134,8 @@
     {Beijing}
     {2017--2019}
     {\begin{cvitems}
-        Then I became a postdoc of a young and charming guy \href{http://wangleiphy.github.io/}{Lei-Wang}. Besides providing valuable suggestions in my research, Lei also creates a lot of opportunities for me, like encouraging me to give lectures and talks in international conferences and summer schools.
-        My postdoc career is in Institute of Physics (IOP), Chinese Academy of Sciences. That time my research interest is automatic differentiation and quantum algorithms, this is a field that can incubate several killer Apps. I also developed the quantum simulation framework \href{https://github.com/QuantumBFS/Yao.jl}{Yao.jl} with a built in automatic differention engine together with a genuine Julia lover \href{http://blog.rogerluo.me/}{Xiu-Zhe Luo}.
-        I mentored a student for Julia on the \href{https://summerofcode.withgoogle.com/}{GSoC} project of differentiable tensor networks. It is a valuable experimence for me to lead a project. The open source repository \texttt{OMEinsum} is listed bellow.
+        Then I became a postdoc of a young and charming guy \href{http://wangleiphy.github.io/}{Lei-Wang} in Institute of Physics (IOP), Chinese Academy of Sciences (CAS). Besides providing valuable suggestions in my research, Lei also creates a lot of opportunities for me, like encouraging me to give lectures and talks in international conferences and summer schools.
+That time my research interest is automatic differentiation and quantum algorithms.
     \end{cvitems}}
   \cventry
     {Consultant}
@@ -149,8 +151,9 @@
     {Harvard university}
     {Boston}
     {2020.08-}  % description
-    {\begin{cvitems}Thanks to QuEra's sponsorship, I became a postdoc in Mikhail Lukin's group working on several projects I am proud of.
-    One is understanding independent set solution space mainly motivated to understand quantum systems better, I am my collaborlators proposed the generic tensor network approach to solve solution space properties in a unified framework.
+    {\begin{cvitems}
+    QuEra Computing Inc. sponsored my postdoc in Mikhail Lukin's group. I am working on several projects I am proud of.
+    One is using generic tensor network for understanding solution space properties of some computational hard problems, mainly motivated to understand quantum systems better, I am my collaborlators proposed the generic tensor network approach to solve solution space properties in a unified framework.
         Another is mapping a general maximum independent set (MIS) problem to one with restricted geometry of diagonal coupled grid graph.
     For a $n$ vertex graph, our algorithm introduces an overhead of $O(n^2)$ which is probably optimal, which is a leap comparing to the previous algorithm having an $O(n^8)$ overhead. Since our algorithm makes solving MIS problem with physical devices practical, with the understadning of it value, it is now being patented.
     Other projects including speeding up SLM hologram computation for generating arbitrary geometry by 4 orders with an improved fourier transformation, a time evolution algorithm on random tensor networks et al.
@@ -176,9 +179,58 @@
     {Academic Excellence Scholarship}{Nanjing University}{NanJing}{2016}
 \end{cvhonors}
 
+\cvsection{Open Source Contributions}
+\begin{cventries}
+  \cventry
+    {One of the main developers} % Role
+    {\href{https://github.com/QuantumBFS/Yao.jl}{Yao.jl}} % Title
+    {} % Location
+    {} % Date(s)
+    {
+      \begin{cvitems} % Description(s)
+          {\texttt{Yao.jl} is the most popular quantum circuit simulation framework in Julia community.
+          The Yao repository has 650+ Github stars and the paper has 50+ citations.
+          It is fast, generic, GPU accelerated and differentiable, and is designed for research and education, 
+          }
+      \end{cvitems}
+    }
+  \cventry
+    {Mentor of \texttt{OMEinsum.jl}, main developer of \texttt{OMEinsumContractionOrders.jl}} % Role
+    {\href{https://github.com/under-Peter/OMEinsum.jl}{OMEinsum.jl} and \href{OMEinsumContractionOrders.jl}{OMEinsumContractionOrders.jl}} % Title
+    {}{}
+    {
+      \begin{cvitems} % Description(s)
+          {\texttt{OMEinsum.jl} is a generic, differentiable einsum library with GPU support. It was developed by Andreas Peter (mentor under me) on the \href{https://summerofcode.withgoogle.com/}{Google Summer of Code (GSoC)} project about differential programming tensor networks. This project is a successful one and now its Github repo has 100+ stars.
+          \texttt{OMEinsumContractionOrders.jl} is its extension for contraction order optimization, which includes many state of the art algorithms implemented.}
+      \end{cvitems}
+    }
+
+  \cventry
+    {Main developer}
+    {\href{https://github.com/Happy-Diode/GraphTensorNetworks.jl}{GraphTensorNetworks.jl}} % Title
+    {}{}
+    {
+      \begin{cvitems} % Description(s)
+          {\texttt{GraphTensorNetworks.jl} is the a package using random tensor network contraction for solving graph properties,
+          .}
+      \end{cvitems}
+    }
+
+\end{cventries}
+
 %\input{cv/presentation.tex}
 \cvsection{Selected Presentations}
 \begin{cventries}
+    \cventry
+    {Lecturer}
+    {The FOR 1807 Winter School on Numerical Methods for Strongly Correlated Quantum Systems}
+    {Marburg}
+    {2018}
+    {
+    \begin{cvitems}
+        Lecture: \href{https://github.com/GiggleLiu/marburg}{"Deep learning and quantum many body systems"}.
+    \end{cvitems}
+    }
 \cventry
     {Presenter} % role
     {March Meeting} % event
@@ -186,7 +238,7 @@
     {2019} % date
     {
     \begin{cvitems}
-        Gave a talk \href{https://meetings.aps.org/Meeting/MAR19/Session/E27.10}{"Differentiale Quantum Circuits and Generative Modeling"}
+        Talk: \href{https://meetings.aps.org/Meeting/MAR19/Session/E27.10}{"Differentiale Quantum Circuits and Generative Modeling"}
     \end{cvitems}
     }
 \cventry
@@ -194,7 +246,7 @@
     {Juliacon}{Baltimore}{2019}
     {
     \begin{cvitems}
-        Gave a talk \href{https://www.youtube.com/watch?v=f-CaQMTqjPk}{"Differential Programming Tensor Networks"}
+        Talk: \href{https://www.youtube.com/watch?v=f-CaQMTqjPk}{"Differential Programming Tensor Networks"}
     \end{cvitems}
     }
 \cventry
@@ -203,7 +255,7 @@
     {Dongguan}{2019}
     {
     \begin{cvitems}
-        Gave lectures on quantum computing.
+        Lectures on the quantum computing part.
     \end{cvitems}
     }
 
@@ -214,13 +266,19 @@
 \cvsection{Selected Publications}
 \begin{cventries}
   \cventry
-    {Jinguo Liu, Min-Thi Nguyen, Shengtao Wang and Hannes Pichler} % Role
+    {Jinguo Liu, Min-Thi Nguyen, Shengtao Wang et al and Hannes Pichler} % Role
     {Maximum independent sets: from unit disk graphs to arbitrary connectivity} % Title
     {Unpublished} % Location
     {2022} % Date(s)
     {
       \begin{cvitems} % Description(s)
-        \item {}
+        {
+        Recent progresses of variational quantum algorithms show great potential of using Rydberg atom arrays to solve the maximum independent set (MIS) problem defined on diagonal coupled unit disk grid graphs.
+    We propose a scheme to reduce the problem of finding an MIS of a general graph $G$ to these graphs with highly restricted geometry to boost the power of these quantum algorithms.
+          The mapped graph has an overhead bounded by $4 {\rm pw}(G)$, where ${\rm pw}(G)$ is the path width of graph $G$.
+    We show this mapping scheme is optimal up to a constant if there is no sub-exponential algorithms for finding an MIS of a general graph.
+    Understanding its value to quantum algorithms, we are now patenting it.
+}
       \end{cvitems}
     }
   \cventry
@@ -230,7 +288,12 @@
     {2022} % Date(s)
     {
       \begin{cvitems} % Description(s)
-        \item {}
+      {We introduce a tensor network algorithm %a method that combines generic programming and tensor network techniques
+to compute various solution space properties of a class of combinatorial optimization problems on graphs that can be rephrased as satisfiability problems of constraints over local sets of vertices, including the independent set problem, the maximum cut problem, the vertex coloring problem, the maximal clique problem, the dominating set problem, and the satisfiability problem, among others.
+We look at the independent set problem as an example, and show how to compute the size of the maximum independent set, count the number of independent sets of a given size, and enumerate/sample the independent sets of a given size.
+By using generic programming techniques, %which require a program to work correctly for different input data types without sacrificing efficiency,
+the same simple-to-implement framework can be used to compute all of these properties. Our algorithm utilizes recent advances in tensor network contraction techniques to achieve high performance, including methods to quickly find a near-optimal contraction order and slicing.
+          To demonstrate how our versatile tool helps to understand these hard problems, we apply it to a few examples, including computing the entropy constant for several hardcore gases on disordered lattices, studying the Overlap Gap Property on unit disk graphs and regular graphs, and analyzing the performance of quantum and classical optimization algorithms for the independent set problem.}
       \end{cvitems}
     }
   \cventry{Jinguo Liu, Lei Wang and Pan Zhang}
@@ -238,9 +301,6 @@
   {Phys. Rev. Lett. 126, 090506}
   {2021}
   {
-      \begin{cvitems} % Description(s)
-        \item {}
-      \end{cvitems}
   }
   \cventry
     {Xiuzhe Luo, Jinguo Liu, Pan Zhang and Lei Wang} % Role
@@ -248,9 +308,6 @@
     {Quantum} % Location
     {2020} % Date(s)
     {
-      \begin{cvitems} % Description(s)
-        \item {One of the main authors of the most popular quantum circuit simulator in Julia language.}
-      \end{cvitems}
     }
 \end{cventries}
 %-------------------------------------------------------------------------------
