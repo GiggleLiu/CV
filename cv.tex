@@ -272,39 +272,26 @@
     {
       \begin{cvitems} % Description(s)
         {
-    Recent progress in variational quantum algorithms shows the great potential of using Rydberg atom arrays to find maximum independent sets of diagonal-coupled unit-disk grid graphs.
-    We propose a mapping scheme that maps the problem of finding an MIS of a general graph $G$ to that on a diagonal-coupled unit-disk grid graph to make these quantum algorithms be useful in a more general setup.
-    Given a general graph, the proposed mapping scheme only introduces an overhead that is proportional to the pathwidth of that graph.
-    We show this mapping scheme is optimal, otherwise, there is an algorithm for finding maximum independent sets of a general graph that runs in sub-exponential time to the problem size, i.e. better than any existing algorithms.
-    Understanding its value to quantum algorithms, we patented it.
+            It is a computational complexity paper about reducing the problem of finding maximum independent sets on a general graph to that on a diagonal-coupled unit-disk grid graph. The overhead of the proposed method is only the pathwidth of the source graph, which is much better than the previously known $n^8$ reduction. We show this mapping scheme is optimal up to a constant factor if the exponential hypothesis is true. With this mapping scheme, a general maximum independent set problem can potentially be solved faster on a quantum device (see \href{https://arxiv.org/abs/2202.09372}{arXiv: 2202.09372}).
 }
       \end{cvitems}
     }
   \cventry
     {Jinguo Liu, Xun Gao, Shengtao Wang, Midelyn Cain and Mikhail Lukin} % Role
     {Computing solution space properties by generic programming tensor networks} % Title
-    {Unpublished} % Location
+    {\href{https://arxiv.org/abs/2205.03718}{arXiv: 2205.03718}} % Location
     {2022} % Date(s)
-    {
-      \begin{cvitems} % Description(s)
-      {We introduce a tensor network algorithm %a method that combines generic programming and tensor network techniques
-to compute various solution space properties of a class of combinatorial optimization problems on graphs that can be rephrased as satisfiability problems of constraints over local sets of vertices, including the independent set problem, the maximum cut problem, the vertex coloring problem, the maximal clique problem, the dominating set problem, and the satisfiability problem, among others.
-We look at the independent set problem as an example, and show how to compute the size of the maximum independent set, count the number of independent sets of a given size, and enumerate/sample the independent sets of a given size.
-By using generic programming techniques, %which require a program to work correctly for different input data types without sacrificing efficiency,
-the same simple-to-implement framework can be used to compute all of these properties. Our algorithm utilizes recent advances in tensor network contraction techniques to achieve high performance, including methods to quickly find a near-optimal contraction order and slicing.
-          To demonstrate how our versatile tool helps to understand these hard problems, we apply it to a few examples, including computing the entropy constant for several hardcore gases on disordered lattices, studying the Overlap Gap Property on unit disk graphs and regular graphs, and analyzing the performance of quantum and classical optimization algorithms for the independent set problem.}
-      \end{cvitems}
-    }
+    {}
   \cventry{Jinguo Liu, Lei Wang and Pan Zhang}
   {Tropical tensor network for ground states of spin glasses}
-  {Phys. Rev. Lett. 126, 090506}
+    {\href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.090506}{Phys. Rev. Lett. 126, 090506}}
   {2021}
   {
   }
   \cventry
     {Xiuzhe Luo, Jinguo Liu, Pan Zhang and Lei Wang} % Role
     {Yao.jl: Extensible, Efficient Framework for Quantum Algorithm Design} % Title
-    {Quantum} % Location
+    {\href{https://quantum-journal.org/papers/q-2020-10-11-341/}{Quantum}} % Location
     {2020} % Date(s)
     {
     }
