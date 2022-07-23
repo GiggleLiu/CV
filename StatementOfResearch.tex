@@ -127,13 +127,33 @@ In the computational complexity field, it can bridge some important results abou
 % For sparse graphs like tree graphs and three regular graphs, this quantity can be much smaller than the number of vertices.
 The paper for this work as well as an open source software will be released soon.
 
-\subsection{Future Work}
+\section{Future Work}
 
-DUGGs have many properties that make them look simple, like the absence of overlap gap property in a random instance, the treewidth that scales square root of the size, and can be constant-approximated in polynomial time, unlike the general MIS problem.
-We also have a preliminary simulated annealing result that indicates an average DUGG can be solved in polynomial time, which is too good to be true.
-One possible explanation is: the mapped graphs live in the hardest corner of the whole set of DUGGs.
-I want to study and understand DUGGs more to explain these observations seemingly inconsistent with our previous understanding.
-I also want to study the quantum dynamics of the mapped graph under annealing and deepen my understanding of the performance of quantum annealing on this may be the hardest portion of DUGGs.
+%DUGGs have many properties that make them look simple, like the absence of overlap gap property in a random instance, the treewidth that scales square root of the size, and can be constant-approximated in polynomial time, unlike the general MIS problem.
+%We also have a preliminary simulated annealing result that indicates an average DUGG can be solved in polynomial time, which is too good to be true.
+%One possible explanation is: the mapped graphs live in the hardest corner of the whole set of DUGGs.
+%I want to study and understand DUGGs more to explain these observations seemingly inconsistent with our previous understanding.
+%I also want to study the quantum dynamics of the mapped graph under annealing and deepen my understanding of the performance of quantum annealing on this may be the hardest portion of DUGGs.
+
+\subsection{New computational frameworks}
+One of the most important goals of quantum physics is building new computational frameworks that can be much better than traditional CMOS based technologies.
+I think reducing the energy consumption and making use of quantum entanglement might be the most important two directions to go.
+Since there are a lot researchers already understand the importance of quantum computing.
+I want to put more efforts to reducing the energy consumption. Although it is widely accepted that quantum computing is a type of reversible computing, a quantum computer is often built in a energy in-efficient style.
+For example, if one wants to apply a quantum gate with precision $\epsilon$, the energy consumption might be $1/\epsilon$.
+I haven't estimated the energy consumption of realizing the Shor's algorithm upto the desired precision to crack the encryption system.
+But I think it might be much, and I will do it in the future.
+After all, the energy consumption is the crucial measure of computing efficiency rather than the computing time.
+
+\subsection{Reversible Cellular Automata}
+\begin{enumerate}
+In traditional reversible computing, most proposed frameworks are the von-Neuman architecture that requires a RAM.
+Then except the reversible logic gates, they also need to design a protocal to access the memory reversiblly.
+To me, developing a reversible RAM and let the data transport through the BUS reversibly is not very practical.
+Another type of physics like computing based on block cellular automata does not have such problem.
+There might be $10^6$ room known to optimize comparing to the brain of a honeybee.
+
+Block cellular automata
 
 \section{Summary}
 To summarize, at this point in my career, my primary interests are computational-hard problems and near-term quantum algorithms.
