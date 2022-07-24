@@ -15,6 +15,8 @@
 \author{JinGuo Liu\\ Department of Physics, Harvard University}
 \date{\today}
 
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
 \newcommand{\<}{\langle}
 \renewcommand{\>}{\rangle}
 \newcommand{\vsigma}{\vec{\sigma}}
@@ -145,15 +147,36 @@ I haven't estimated the energy consumption of realizing the Shor's algorithm upt
 But I think it might be much, and I will do it in the future.
 After all, the energy consumption is the crucial measure of computing efficiency rather than the computing time.
 
-\subsection{Reversible Cellular Automata}
-\begin{enumerate}
+
+
+
 In traditional reversible computing, most proposed frameworks are the von-Neuman architecture that requires a RAM.
 Then except the reversible logic gates, they also need to design a protocal to access the memory reversiblly.
 To me, developing a reversible RAM and let the data transport through the BUS reversibly is not very practical.
 Another type of physics like computing based on block cellular automata does not have such problem.
 There might be $10^6$ room known to optimize comparing to the brain of a honeybee.
 
-Block cellular automata
+\subsubsection{Reversible Cellular Automata on Rydberg atom arrays}
+I propose implementing quantum cellular automata in Rydberg atom arrays as a practical approach towards universal quantum computing for the following reasons
+\begin{enumerate}
+    \item Cellular automata does not require local pulses, which is costly in Rydberg atom arrays,
+    \item Cellular automata does not require runtime atom moving, which is costly in Rydberg atom arrays,
+    \item Cellular automata can be parallelized easily.
+\end{enumerate}
+
+To build a block quantum cellular automata (BQCM), \circled{1} we first prepare two piles of Rydberg atoms in hyper-fine states $|0\rangle$ and $|1\rangle$.
+\circled{2} Then initialize the configuration by moving atoms to a bi-layer square lattice. We map two atoms at the same $x,y$-coordinate to a qudit, and each qudit has 4 possible states $|00\rangle = 0$, $|01\rangle=1$, $|10\rangle=\square$ and $|11\rangle=\blacksquare$.
+We use these qudits to encodes both the program and the input data.
+\circled{3} Divide the square lattice into A, B sub-lattices as shown in Fig.~\ref{fig:ablattice} and drive them to do circular moves of period $T$, with the phases of A, B sub-lattices different by $\pi$. Each time four atoms move closest to each other, perform a gate operation that does the quantum gate in Fig.~\ref{fig:basicgate}. After certain steps $m$, the results can be read from the final configuration.
+
+\begin{figure}[th]
+  \centering
+  \includegraphics[width=\columnwidth]{hgate.png}
+\end{figure}
+
+NOTE: initial configurations can be $\{0, 1, r, {\rm no~atom}\}$
+\subsection{Characterizing the solution space of hard problems}
+
 
 \section{Summary}
 To summarize, at this point in my career, my primary interests are computational-hard problems and near-term quantum algorithms.
