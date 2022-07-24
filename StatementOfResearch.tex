@@ -165,11 +165,20 @@ I propose implementing quantum cellular automata in Rydberg atom arrays as a pra
     \item Cellular automata can be parallelized easily.
 \end{enumerate}
 
+\begin{figure}[th]
+    \centering
+    \includegraphics[scale=1]{images/bqca-circles.pdf}
+    \caption{Periodic driving pulses.}
+    \label{fig:ablattice}
+\end{figure}
+
 To build a block quantum cellular automata (BQCM), \circled{1} we first prepare two piles of Rydberg atoms in hyper-fine states $|0\rangle$ and $|1\rangle$.
 \circled{2} Then initialize the configuration by moving atoms to a bi-layer square lattice. We map two atoms at the same $x,y$-coordinate to a qudit, and each qudit has 4 possible states $|00\rangle = 0$, $|01\rangle=1$, $|10\rangle=\square$ and $|11\rangle=\blacksquare$.
 We use these qudits to encodes both the program and the input data.
-\circled{3} Divide the square lattice into A, B sub-lattices as shown in Fig.~\ref{fig:ablattice} and drive them to do circular moves of period $T$, with the phases of A, B sub-lattices different by $\pi$.
-Each time four atoms move closest to each other, the state will be updated by the rules specified in Fig.~\ref{fig:qbca}. After certain steps $m$, the results can be read out from the final configuration.
+\circled{3} Drive the atoms on the square lattice with periodic optical traps/tweezers as shown in Fig.~\ref{fig:ablattice} and make them oscilate with period $T$.
+Each time four atoms move closest to each other, the state will be updated by $U$.
+Where $U$ is a unitary gate that implements the rules specified in Fig.~\ref{fig:qbca}.
+After certain steps $m$, the results can be read out from the final configuration.
 
 \begin{figure}[th]
   \begin{subfigure}[b]{\textwidth}
