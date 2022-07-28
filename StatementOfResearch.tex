@@ -41,9 +41,8 @@ I am a Post-Doctoral fellow in Mikhail Lukin's group at the department of physic
 %How quantum computers can help to understand the hardness of a classical computational task.
 The majority of my current research is about understanding the computational hardness and its relation to quantum physics, which I believe is the key to understanding the nature of computation.
 In the following, I will explain my works in the past two years mainly from two aspects, one is understanding the computational hardness from the solution space properties, and another is embedding computational-hard problems in a physical system.
-
-\section{Solution space properties of hard combinatorial optimization problems}
-\subsection{Current Work}
+\section{Current Works}
+\subsection{Solution space properties of hard combinatorial optimization problems}
 In the past two years, I have been most dedicated to creating a unified framework to solve the \textit{solution space properties}~\cite{Liu2022} of a class of hard combinatorial optimization problems. Here, the solution space property refers to a class of quantities that not only include the maximum or minimum set size, but also include the number of sets at a given size, enumeration of all sets at a given size, and direct sampling of such sets when they are too large to be fit into memory; the class of problem includes but is not limited to the independent set problem, the maximum cut problem, the vertex coloring problem, the maximal clique problem, the dominating set problem, and the satisfiability problem, among others. The framework I and my collaborators created is called generic tensor network, where the word ``generic'' comes from generic programming in computer science.
 While the relationship between a counting problem and a tensor network is well known, these works did not catch much attention of computational scientists due to their limited use cases.
 We take a different view of a tensor network and show how different solution space properties can be computed with the same program by elevating the tensor element algebra to commutative semiring algebras.
@@ -93,16 +92,15 @@ By inspecting the configuration space connectivity, we find the absence of the o
 Here, the overlap gap property is an important feature of a solution space geometry, the presence of which indicates a no-go for a local-search-based algorithm.
 These solution space properties that helped understand quantum and classical algorithms are not feasible in the previous frameworks that mainly targeted on best solutions. Our method fills the gap between finding one solution for a hard problem and understanding a hard problem.
 
-\subsection{Future Work}
+% \subsection{Future Work}
 
-It would like to generalize the idea of generic programming to other algorithms using the inclusion-exclusion principle or subset convolution and see what new properties can be computed.
-To this end, it is worth mentioning dynamic programming.
-Dynamic programming is closely related to a tropical tensor network, for example, the Viterbi algorithm for finding the most probable configuration in a hidden Markov model can be interpreted as a matrix product state featured with tropical algebra, and the tropical tensor network in the main text is probably equivalent to dynamic programming in finding the best solution.
-However, while having broader applications,
-dynamic programming does not have a clear algebraic interpretation required by computing solution space properties beyond finding the best solution.
+% It would like to generalize the idea of generic programming to other algorithms using the inclusion-exclusion principle or subset convolution and see what new properties can be computed.
+% To this end, it is worth mentioning dynamic programming.
+% Dynamic programming is closely related to a tropical tensor network, for example, the Viterbi algorithm for finding the most probable configuration in a hidden Markov model can be interpreted as a matrix product state featured with tropical algebra, and the tropical tensor network in the main text is probably equivalent to dynamic programming in finding the best solution.
+% However, while having broader applications,
+% dynamic programming does not have a clear algebraic interpretation required by computing solution space properties beyond finding the best solution.
 
-\section{Solving the maximum independent set problem with Rydberg atom arrays}
-\subsection{Current Work}
+\subsection{Solving the maximum independent set problem with Rydberg atom arrays}
 I and my collaborators proposed a scheme to reduce the MIS problem on a general graph to one on a DUGG and showed this reduction is very likely to be optimal~\cite{Liu2022b}.
 The proposed method only introduce an overhead that is linear to the pathwidth of the source graph, where the pathwidth is a graph characteristic that is upper bounded by the number of vertices.
 This result may have impacts on both fields of quantum computing and computational complexity.
@@ -130,52 +128,58 @@ In the computational complexity field, it can bridge some important results abou
 % For sparse graphs like tree graphs and three regular graphs, this quantity can be much smaller than the number of vertices.
 The paper for this work as well as an open source software will be released soon.
 
-\section{Future Work}
+\section{Future Works}
 
 %DUGGs have many properties that make them look simple, like the absence of overlap gap property in a random instance, the treewidth that scales square root of the size, and can be constant-approximated in polynomial time, unlike the general MIS problem.
 %We also have a preliminary simulated annealing result that indicates an average DUGG can be solved in polynomial time, which is too good to be true.
 %One possible explanation is: the mapped graphs live in the hardest corner of the whole set of DUGGs.
 %I want to study and understand DUGGs more to explain these observations seemingly inconsistent with our previous understanding.
 %I also want to study the quantum dynamics of the mapped graph under annealing and deepen my understanding of the performance of quantum annealing on this may be the hardest portion of DUGGs.
+My wildest dream is to understand the nature of computation from a physicists perspective.
+%I want to discover the fundamental law of physics that governing this physical system without translational invariance in both time and space.
+%For example, I will try to see how energy consumption is related to the target problem and computing speed from the quantum thermal dynamics' perspective.
+%My second wildest dream is to propose a general proposed automated theorem proving framework, which I think is a technology that might change the world significantly and make a lot theorists lost their jobs.
+%This dream is too ambitious to make a concrete plan, in order to this research statement more trust worthy, 
+So I propose the following two research directions for the next 5 years.
 
-\subsection{New computational frameworks}
+\subsection{Energy efficient computational frameworks}
 One of the most important goals of quantum physics is building new computational frameworks that can be much better than traditional CMOS based technologies.
-I think reducing the energy consumption and making use of quantum entanglement might be the most important two directions to go.
-Since there are a lot researchers already understand the importance of quantum computing.
-I want to put more efforts to reducing the energy consumption. Although it is widely accepted that quantum computing is a type of reversible computing, a quantum computer is often built in a energy in-efficient style.
-For example, if one wants to apply a quantum gate with precision $\epsilon$, the energy consumption might be $1/\epsilon$.
-I haven't estimated the energy consumption of realizing the Shor's algorithm upto the desired precision to crack the encryption system.
-But I think it might be much, and I will do it in the future.
-After all, the energy consumption is the crucial measure of computing efficiency rather than the computing time.
-
-
-
-
-In traditional reversible computing, most proposed frameworks are the von-Neuman architecture that requires a RAM.
-Then except the reversible logic gates, they also need to design a protocal to access the memory reversiblly.
-To me, developing a reversible RAM and let the data transport through the BUS reversibly is not very practical.
-Another type of physics like computing based on block cellular automata does not have such problem.
-There might be $10^6$ room known to optimize comparing to the brain of a honeybee.
+It can be better in reducing the energy consumption, making use of quantum entanglement to solve hard problems or both.
+These two goals are often not very compatible in traditional circuit based quantum computing due to the requirement of external classical controls.
+If one wants to apply a quantum gate with precision $\epsilon$, the energy consumption is expected to scale as $1/\epsilon$.
+%I haven't estimated the energy consumption of realizing the Shor's algorithm upto the desired precision to crack the encryption system.
+%But I think it might be much, and I will do it in the future.
+%After all, the energy consumption is the crucial measure of computing efficiency rather than the computing time.
+%This is because in traditional reversible computing, most proposed frameworks are the von-Neuman architecture that requires a RAM.
+%Then except the reversible logic gates, they also need to design a protocal to access the memory reversiblly.
+%To me, developing a reversible RAM and let the data transport through the BUS reversibly is not very practical.
+I want to build an energy efficient computational framework without external classical control.
+%because current CMOS based computing devices has so much room to improve and improving the energy efficiency would bring significant changes to our society.
+%It is estimated that current CMOS based computation is $10^6$ times less energy efficient comparing to the the brain of a honeybee.
+%I believe if we can overcome this energy barrier, machine learning may boost for the enormous computational power and strong artificial intellectual may emerge.
+In the following, I will sketch a possible approach based on quantum cellular automata for energy efficient quantum computing.
 
 \subsubsection{Reversible Cellular Automata on Rydberg atom arrays}
-I propose implementing quantum cellular automata in Rydberg atom arrays as a practical approach towards universal quantum computing for the following reasons
+
+Using physics like computing model based on block cellular automata does not require an external classical control and is potentially much more energy efficient.
+So I propose implementing quantum cellular automata in Rydberg atom arrays as a practical approach towards universal quantum computing for the following reasons
 \begin{enumerate}
-    \item Cellular automata does not require local pulses, which is costly in Rydberg atom arrays,
+    \item Cellular automata potentially can avoid using local pulses, which is costly in Rydberg atom arrays,
     \item Cellular automata does not require runtime atom moving, which is costly in Rydberg atom arrays,
-    \item Cellular automata can be parallelized easily.
+    \item Cellular automata can parallelize computations easily.
 \end{enumerate}
 
 \begin{figure}[th]
     \centering
     \includegraphics[scale=1]{images/bqca-circles.pdf}
-    \caption{Periodic driving pulses.}
+    \caption{Time dependent optical traps to drive atoms (red dots) moving in a circle.}
     \label{fig:ablattice}
 \end{figure}
 
 To build a block quantum cellular automata (BQCM), \circled{1} we first prepare two piles of Rydberg atoms in hyper-fine states $|0\rangle$ and $|1\rangle$.
 \circled{2} Then initialize the configuration by moving atoms to a bi-layer square lattice. We map two atoms at the same $x,y$-coordinate to a qudit, and each qudit has 4 possible states $|00\rangle = 0$, $|01\rangle=1$, $|10\rangle=\square$ and $|11\rangle=\blacksquare$.
 We use these qudits to encodes both the program and the input data.
-\circled{3} Drive the atoms on the square lattice with periodic optical traps/tweezers as shown in Fig.~\ref{fig:ablattice} and make them oscilate with period $T$.
+\circled{3} Drive the atoms on the square lattice with periodic optical traps/tweezers as shown in Fig.~\ref{fig:ablattice} and make them oscillate with period $T$.
 Each time four atoms move closest to each other, the state will be updated by $U$.
 Where $U$ is a unitary gate that implements the rules specified in Fig.~\ref{fig:qbca}.
 After certain steps $m$, the results can be read out from the final configuration.
@@ -183,8 +187,8 @@ After certain steps $m$, the results can be read out from the final configuratio
 \begin{figure}[th]
   \begin{subfigure}[b]{\textwidth}
   \centering
-  \includegraphics[scale=1]{images/bqca-signal.pdf} ~~~~~~~~
-  \includegraphics[scale=1]{images/bqca-signal1.pdf}
+  \includegraphics[scale=0.8]{images/bqca-signal.pdf} ~~~~~~~~
+  \includegraphics[scale=0.8]{images/bqca-signal1.pdf}
   \caption{Signal propagation}
   \end{subfigure}
 
@@ -192,7 +196,7 @@ After certain steps $m$, the results can be read out from the final configuratio
   
   \begin{subfigure}[b]{\textwidth}
   \centering
-  \includegraphics[scale=1]{images/bqca-bouncing.pdf}
+  \includegraphics[scale=0.8]{images/bqca-bouncing.pdf}
   \caption{Bouncing}
   \end{subfigure}
 
@@ -201,7 +205,7 @@ After certain steps $m$, the results can be read out from the final configuratio
   \centering
   \begin{subfigure}[b]{\textwidth}
   \centering
-  \includegraphics[scale=1]{images/bqca-hadamard.pdf}
+  \includegraphics[scale=0.8]{images/bqca-hadamard.pdf}
   \caption{Hadamard gate}
   \end{subfigure}
   
@@ -209,20 +213,57 @@ After certain steps $m$, the results can be read out from the final configuratio
   
   \begin{subfigure}[b]{\textwidth}
   \centering
-  \includegraphics[scale=1]{images/bqca-cphase.pdf}
+  \includegraphics[scale=0.8]{images/bqca-cphase.pdf}
   \caption{CPhase($\frac{\pi}{4}$)}
   \end{subfigure}
   \caption{Building blocks of quantum cellular automata in Ref.~\cite{Arrighi2012}. These rules are rotational symmetric.}
   \label{fig:qbca}
 \end{figure}
 
-NOTE: initial configurations can be $\{0, 1, r, {\rm no~atom}\}$
-\subsection{Characterizing the solution space of hard problems}
+There is a remaining challenge, that is the global pulses alone do not have the ability to implement the desired 4-qudit gate, it can only implement certain gates.
+In order to avoid local addressing, we need to either schedule the atoms moving cleverly so that we can apply single qubit gates partially or design a Rydberg friendly quantum cellular automata model.
 
+\subsection{A unified framework for resource estimation for computing hard problems}
+%Limited resources and the perpetuation of human race require us not only to explore the universe to find more resources, but also to make better use of existing resources on the earth, e.g. the energy resource.
+It is estimated that 5-25 percent of all energy consumption in the world goes to running computing devices.
+A significant amount of them goes to scientific computing, for example, both training a neural network for generative language modeling~\cite{Rosset2019} and classical simulation~\cite{Haner_2017} and benchmarking~\cite{Pan2021} quantum algorithms can cost energy that worth million dollars.
+However, for many of them, the energy consumption can be significantly reduced by calling the correct algorithm and its best implementation.
+For example, with the state of the art tensor network contraction order finding algorithm, classical algorithms can beat google supremacy circuit with much lower energy cost~\cite{Kalachev2022}.
+
+I want to build an algorithm hub to help researchers and industry users to choose the best algorithms.
+As illustrated in Fig.~\ref{fig:alghub}, the algorithm hub is a web application that containing both the algorithm implementations and their complexity models to estimate computational resources from inputs.
+%The algorithms in the hub can be specified by a dictionary of input arguments and a dictionary of outputs.
+For example the DMRG algorithm can be specified as an matrix product operator with bond dimension $c$, the maximum bond dimension $D$, the size of physical degree of freedoms $d$, the length of chain $L$ and the number of sweeps $m$.
+The developer can input the time complexity as ${const.} \times L \times m\times D^3 \times d^2 \times c$ and space complexity ${const.} \times L\times d\times D^2$.
+The application server does not know whether this complexity model is correct or not, so the best thing it can do is trust the developer and keep improving it automatically.
+
+To use the service, a user posts a request with the input arguments to the server. Then the server estimate the required resource from the input arguments and does the computing if the required resource is available.
+Computing time and space will be collected for improving the complexity model, e.g. tuning the constant factor, additive overhead and the exponents.
+%Developers can update their application to this web server together with a complexity model.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.8]{images/AlgorithmHub.pdf}
+    \caption{Algorithm Hub for scientific computing.}
+    \label{fig:alghub}
+\end{figure}
+
+To summarize, building an algorithm hub can
+\begin{itemize}
+    \item save energy resources for human beings,
+    \item save time for researchers and industry users,
+    \item benchmark and polish the complexity model for developers,
+    \item reward open source scientific computing software developers properly.
+\end{itemize}
+
+I am the right one for building an algorithm hub because I have been developing several popular open source packages with good reputations, and I know the need and the best approach to achieve this goal.
+Technically, developers can release their application through a GitHub continuous integration, which provides a proper version control.
+Julia language can be the host language for algorithms, because it is open source, high performance language designed for scientific computing.
+Also, the network base algorithm model solves the problem of Julia's just in time compiling overhead since the web service can reuse the same Julia session.
 
 \section{Summary}
 To summarize, at this point in my career, my primary interests are computational-hard problems and near-term quantum algorithms.
-In the future, I want to understand the nature of computational hardness more from the aspects of quantum thermal dynamics and the integrability of a quantum system.
+In the future, I want to understand the nature of computation and propose energy efficient computational frameworks.
 Except for these research interests, I want to devote half of my time to the help build up the open-source scientific software ecosystem.
 I believe programming is a proper way to formalize some part of human knowledge, and open-source software development is an integrable and collaborative practice in this direction.
 % way for human to build up the tree of knowledge.
