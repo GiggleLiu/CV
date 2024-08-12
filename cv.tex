@@ -392,5 +392,15 @@
 \end{cventries}
 
 For more, please check my \href{https://scholar.google.com/citations?view_op=list_works&hl=zh-CN&hl=zh-CN&user=4edw228AAAAJ&sortby=pubdate}{google scholar profile}.
+
+\nocite{*} % cite all bib items, without text
+
+\begingroup % stops printing 'references';
+%   http://tex.stackexchange.com/questions/22645/hiding-the-title-of-the-bibliography
+\renewcommand{\section}[2]{}%
+
+\bibliography{ref}{}
+\bibliographystyle{unsrt}
+
 %-------------------------------------------------------------------------------
 \end{document}
